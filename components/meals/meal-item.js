@@ -8,6 +8,7 @@ export default function MealItem({ title, slug, image, summary, creator }) {
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
+          {/* #TODO: use AWS S3 to store the images */}
           <Image src={image} alt={title} fill />
         </div>
         <div className={classes.headerText}>

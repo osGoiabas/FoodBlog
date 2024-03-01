@@ -1,6 +1,7 @@
 const sql = require('better-sqlite3');
 const db = sql('meals.db');
 
+//#TODO: use AWS S3 to store the images
 const dummyMeals = [
   {
     title: 'Juicy Cheese Burger',
