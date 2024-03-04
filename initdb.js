@@ -1,4 +1,6 @@
 const sql = require('better-sqlite3');
+
+//cria uma conexão com o banco de dados meals.db
 const db = sql('meals.db');
 
 //#TODO: use AWS S3 to store the images
@@ -165,6 +167,9 @@ const dummyMeals = [
   },
 ];
 
+
+//db.run 
+//cria uma tabela, caso não exista, no "meals.db" que está em "db"
 db.prepare(`
    CREATE TABLE IF NOT EXISTS meals (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -177,6 +182,7 @@ db.prepare(`
        creator_email TEXT NOT NULL
     )
 `).run();
+
 
 async function initData() {
   const stmt = db.prepare(`
