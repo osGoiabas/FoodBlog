@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
  
 export async function GET(request) {
   try {
+    await sql``
+    /* 
     // Create the Meals table if it doesn't exist
     await sql`
       CREATE TABLE IF NOT EXISTS Meals (
@@ -195,8 +197,8 @@ export async function GET(request) {
           ${meal.creator}, 
           ${meal.creator_email}
         );
-      `;
-    }
+      `; 
+    }*/
     return NextResponse.json({ message: 'Data inserted successfully' }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
